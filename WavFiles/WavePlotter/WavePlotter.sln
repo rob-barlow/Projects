@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WavePlotter", "WavePlotter\WavePlotter.csproj", "{851A83CC-8083-49E1-9BB7-6A08DF1B0C01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphCreater", "GraphCreater\GraphCreater.csproj", "{E071739A-C9D3-49ED-9597-01B528C795C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{23BC20D0-46BA-4381-9B54-3C9FB844BFA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{851A83CC-8083-49E1-9BB7-6A08DF1B0C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851A83CC-8083-49E1-9BB7-6A08DF1B0C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851A83CC-8083-49E1-9BB7-6A08DF1B0C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851A83CC-8083-49E1-9BB7-6A08DF1B0C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E071739A-C9D3-49ED-9597-01B528C795C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E071739A-C9D3-49ED-9597-01B528C795C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E071739A-C9D3-49ED-9597-01B528C795C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E071739A-C9D3-49ED-9597-01B528C795C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23BC20D0-46BA-4381-9B54-3C9FB844BFA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23BC20D0-46BA-4381-9B54-3C9FB844BFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23BC20D0-46BA-4381-9B54-3C9FB844BFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23BC20D0-46BA-4381-9B54-3C9FB844BFA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F1281E5-A536-4F12-9584-104458A57542}
+	EndGlobalSection
+EndGlobal
