@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GraphCreater")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d523f3c205ddcbe3d762514e772ddaf321bb5f32")]
 [assembly: System.Reflection.AssemblyProductAttribute("GraphCreater")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GraphCreater")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

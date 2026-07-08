@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WavePlotter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d523f3c205ddcbe3d762514e772ddaf321bb5f32")]
 [assembly: System.Reflection.AssemblyProductAttribute("WavePlotter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WavePlotter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
