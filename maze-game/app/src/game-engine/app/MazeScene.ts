@@ -8,8 +8,8 @@ import { Panel } from "../scene/objects/Panel";
 import { Scene } from "../scene/Scene";
 
 export function createMazeScene(): {scene: Scene, controllers: Updatable[]} {
-    const mazeWidth = 20;
-    const mazeHeight = 20;
+    const mazeWidth = 2;
+    const mazeHeight = 2;
 
     const scene = new Scene();
 
@@ -99,7 +99,7 @@ function addMaze(scene: Scene, mazeWidth: number, mazeHeight: number){
             // x = row, z = column
             if (maze[rowIndex][columnIndex] == 0){
                 addFloor(scene, [rowIndex, rowIndex + 1], 0, [columnIndex, columnIndex + 1])
-                addWalls(scene, 0, [0,1], [columnIndex, columnIndex + 1])
+                // addWalls(scene, 0, [0,1], [columnIndex, columnIndex + 1])
                 //addFloor(scene, [rowIndex, rowIndex + 1], 1, [columnIndex, columnIndex + 1])
                 //addCorridor(scene, [rowIndex, rowIndex + 1], [0,4], [columnIndex, columnIndex + 1])
             }

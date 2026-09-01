@@ -25,34 +25,32 @@ export class CanvasRenderer {
             height: canvas.height
         };
 
+        console.log("w: " + canvas.width)
+        console.log("h: " + canvas.height)
+
         this.screenBuffer = new ScreenBuffer(this.size.width, this.size.height, 128)
     }
 
     public render(scene: Scene, camera: Camera, fps: number | undefined = undefined){
         this.screenBuffer.resetBuffer();
+        const triangles: [Vec3, Vec3, Vec3][] = []
 
         const gameObjects = scene.sceneObjects;
 
-        gameObjects.forEach(gameObject => {
-            const triangles: ([Vec3, Vec3, Vec3] | null)[] = 
-                Projection.projectTriangles(gameObject.triangles, gameObject.transform, camera.transform, this.size)
+        gameObjects.map(gameObject => {
+            triangles.push(...Projection.projectTriangles(gameObject.triangles, gameObject.transform, camera.transform, this.size))
+        })
 
-            triangles.forEach(triangle => {
-                if (triangle != null) {
+        triangles.forEach(triangle => {
+            let colour: [number, number, number] = [0,0,255]
 
-                let colour: [number, number, number] = [0,0,255]
-                // if (gameObject.transform.position.y == 0){
-                //     colour = [255, 0, 0]
-                // }
-
-                this.drawTriangle(triangle[0], triangle[1], triangle[2], colour)
-
-            }})    
-        });
+            this.drawTriangle(triangle[0], triangle[1], triangle[2], colour)
+        })    
 
         this.drawBuffer();
 
-        if (fps) this.ctx.fillText(fps.toString(), 5, 10)
+        if (fps) this.ctx.fillText("fps: " + fps.toString(), 5, 10) 
+        this.ctx.fillText("triangles: " + triangles.length.toString(), 5, 20) 
     }
 
     private drawTriangle(p1: Vec3, p2: Vec3, p3: Vec3, colour: [number, number, number] = [0, 0, 255]){
@@ -70,6 +68,10 @@ export class CanvasRenderer {
         minY = Math.max(minY, 0)
 
         let maxY = Math.trunc(Math.max(c1.y, c2.y, c3.y));
+
+        if (maxY > this.size.height - 1){
+            console.log("y coordinate: " + maxY)
+        }
         maxY = Math.min(maxY, this.size.height - 1)
 
         let v0 = c1
@@ -91,11 +93,6 @@ export class CanvasRenderer {
 
                     const depth = ((1 - a - b) * p1.z) + (a * p2.z) + (b * p3.z)
                     
-                    //let colour: [number, number, number] = [0,0,255]
-                    
-                    // if (a < 0.01 || b < 0.01){
-                    //     colour[0] = 255
-                    // }
                     this.screenBuffer.updatePixelColour(yPixel, xPixel, depth, colour)
                 }
             }

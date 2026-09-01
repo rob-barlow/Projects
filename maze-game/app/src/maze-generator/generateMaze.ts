@@ -1,3 +1,5 @@
+'use client'
+
 import { Maze } from "./maze";
 import { type Position } from "./Position";
 import { Converter } from "./Converter";

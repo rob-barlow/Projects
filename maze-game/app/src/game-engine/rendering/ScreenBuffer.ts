@@ -20,7 +20,6 @@ export class ScreenBuffer{
         this.depthBuffer = new Array(this.rowLength * this.columnLength).fill(1);
         
         for (let i = 0; i < this.screenBuffer.length / 4; i++){
-            //this.screenBuffer[(i * 4) + 3] = 1
             this.screenBuffer[(i * 4) + 3] = 255
         }
     }
@@ -38,20 +37,6 @@ export class ScreenBuffer{
         }
         catch {
             console.error(`Couldnt set row ${row} and column ${column} with depth ${depth} in frame buffer`)
-        }
-    }
-
-    private setPixelColour(row: number, column: number, colour: [number, number, number]){
-        try {
-            const startIndex = ((row * this.rowLength) + column) * 4
-            for (let i = 0; i < 3; i++){
-                this.screenBuffer[startIndex + i] = colour[i]
-            }
-            this.screenBuffer[startIndex + 3] = 255
-
-        }
-        catch {
-            console.error(`Couldnt set row ${row} and column ${column} in frame buffer`)
         }
     }
 }
