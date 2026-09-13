@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev": "node MusicServer.js"
+  },
+  "devDependencies": {
+    "express": "^5.2.1"
+  }
+}
