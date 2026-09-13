@@ -1,6 +1,9 @@
-export const useSongChange = (token: string) => {
+import { useState } from "react";
 
-    async function changeSong(songId: string) {
+export const useSongChange = (token: string) => {
+  const [songId, setSongId] = useState(''); 
+  
+    async function changeSong() {
       console.log('changing song');
 
       const songObject = {
@@ -17,5 +20,5 @@ export const useSongChange = (token: string) => {
       });
     }
 
-    return (songId: string) => changeSong(songId);
+    return { songId, setSongId, changeSong };
 };

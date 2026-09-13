@@ -1,27 +1,9 @@
 @base-url = https://api.spotify.com/v1
-@authHeader = Basic 
 @access_token = BQDfaLjpBcVnq92J0E7nenBCpFgu88PCRkmXRn16RNu_fWn4TcHT9pA7Ndvo_Bob2HV-38yyg54TVUClT5gMB4xjm8S-R_2kXtpZrP8HEZeQ32hDLNP0sMYpfXfutg8b1qqGEiBiMPC3tlLYpIKZJhwIMq7ooXLh-9P_ZLldhFz1KEhs5Boodzh7dOiSrmTpA9DtLX7r_GTEnQ-eZHe_ZH-L1TjVLJLRJ-79PY3IvD5qkN1qDwiU
 
-@device-id = 369af3f288484ba30b3ec55e419ad43300a512a4
+@device-id = b45121e1c8e213b2c136d5b5615b128af7cde7fc
 
-### POST access token
-POST  https://accounts.spotify.com/api/token
-Authorization: {{authHeader}}
-Content-Type: application/x-www-form-urlencoded
-
-grant_type=client_credentials
-
-### POST access token for playback
-
-### GET my profile
-GET {{base-url}}/me
-Authorization: Bearer {{access_token}}
-
-### GET search results
-GET {{base-url}}/search?q=monster%20florence&type=track
-Authorization: Bearer {{access_token}}
-
-### Get another access token for playback
+### Get access token for playback
 
 GET http://localhost:5000/auth/token
 
@@ -40,4 +22,11 @@ Content-Type: application/json
   "play": true
 }
 
+### GET my profile
+GET {{base-url}}/me
+Authorization: Bearer {{access_token}}
+
+### GET search results
+GET {{base-url}}/search?q=monster%20florence&type=track
+Authorization: Bearer {{access_token}}
 
