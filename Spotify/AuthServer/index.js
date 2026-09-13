@@ -95,6 +95,9 @@ app.get('/auth/token', (req, res) => {
     console.log('access token expired, refreshing')
     refreshAccessToken();
   }
+  else {
+    console.log('access token still valid')
+  }
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.json({ access_token: access_token})

@@ -18,6 +18,7 @@ const useWebPlayback = (token) => {
     const [player, setPlayer] = useState(undefined);
     const [current_track, setTrack] = useState(track);
     const [device_id, setDeviceId] = useState('');
+    const [stateChanging, setStateChanging] = useState(false);
 
     useEffect(() => {
         const script = document.createElement("script");
@@ -45,25 +46,30 @@ const useWebPlayback = (token) => {
             });
 
             player.addListener('player_state_changed', ( state => {
-
+                setStateChanging(stateChanging => !stateChanging);
                 if (!state) {
                     return;
                 }
 
                 setTrack(state.track_window.current_track);
-                setPaused(state.paused);
+                setPaused(true);
 
                 player.getCurrentState().then( state => { 
                     (!state)? setActive(false) : setActive(true) 
                 });
 
+                console.log('Player state changed:', JSON.stringify(state));
             }));
 
             player.connect();
         };
     }, []);
 
-    return { is_paused, is_active, player, current_track, device_id };
+    // const play = () => {
+    //     player.t
+    // }
+
+    return { is_paused, is_active, player, current_track, device_id, stateChanging };
 }
 
 export default useWebPlayback;
