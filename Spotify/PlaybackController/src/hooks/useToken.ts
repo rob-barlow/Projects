@@ -1,0 +1,21 @@
+import { useState, useEffect } from 'react';
+
+export const useToken = () => {
+    const [token, setToken] = useState('');
+  
+    useEffect(() => {
+        
+      async function getToken() {
+        console.log('fetching token from server')
+        const response = await fetch('http://localhost:5000/auth/token');
+        const json = await response.json();
+        console.log(json.access_token)
+        setToken(json.access_token);
+      }
+  
+      getToken();
+  
+    }, []);
+
+    return token;
+};
